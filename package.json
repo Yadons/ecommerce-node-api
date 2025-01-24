@@ -9,6 +9,9 @@
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
   },
+  "prisma": {
+    "schema": "./src/main/infra/database/orm/prisma/schema.prisma"
+  },
   "keywords": [
     "processo",
     "de",
@@ -47,9 +50,13 @@
     "@faker-js/faker": "^9.2.0",
     "@types/node": "^22.2.0",
     "@vitest/ui": "^2.0.5",
+    "prisma": "^6.1.0",
     "sucrase": "^3.35.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0"
   }
 }
