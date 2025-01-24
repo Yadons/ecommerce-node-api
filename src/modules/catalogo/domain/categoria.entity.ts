@@ -16,16 +16,16 @@ class Categoria implements ICategoria {
     public get id(): string {
         return this._id;
     }
-    public set id(value: string) {
+    private set id(value: string) {
         this._id = value;
     }
     
     public get nome(): string {
         return this._nome;
     }
-    public set nome(value: string) {
+    private set nome(value: string) {
         if(value === null || value === undefined){
-            throw Error("nome da categoria é nulo ou indefinido")
+            throw Error(`${value} é nulo ou indefinido.`)
         }
 
         if(value.trim().length < 3){
@@ -59,4 +59,4 @@ class Categoria implements ICategoria {
     }
 }
 
-export {Categoria}
+export { Categoria }
