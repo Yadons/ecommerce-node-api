@@ -1,6 +1,7 @@
 import { CriarCategoriaProps, RecuperarCategoriaProps, ICategoria } from "./categoria.types";
 import { NomeCategoriaNuloOuIndefinido, NomeCategoriaTamanhoMinimoInvalido, NomeCategoriaTamanhoMaximoInvalido } from "./categoria.exceptions";
 import { Entity } from "../../../shared/domain/entity";
+import { CategoriaMap } from "../mappers/categoria.map";
 
 class Categoria extends Entity<ICategoria> implements ICategoria {
    
@@ -55,6 +56,13 @@ class Categoria extends Entity<ICategoria> implements ICategoria {
         return new Categoria(props);
     }
     
+    ////////////
+    //Métodos//
+    //////////
+
+    public toDTO(): ICategoria {
+        return CategoriaMap.toDTO(this);
+    }
 }
 
 export { Categoria }

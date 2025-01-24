@@ -1,6 +1,8 @@
 import { Categoria } from "./modules/catalogo/domain/categoria.entity";
 import { RecuperarCategoriaProps } from "./modules/catalogo/domain/categoria.types";
+import { CategoriaMap } from "./modules/catalogo/mappers/categoria.map";
 import { DomainException } from "./shared/domain/domain.exception";
+import { readFile, writeFile } from "fs";
 
 try {
     
@@ -23,9 +25,37 @@ try {
     let categoria2: Categoria = Categoria.recuperar(propsCategoria)
     console.log(categoria2);
 
+///////////////////////////////////////////////////////
+//Persistinto e Recuperando em Arquivos - File System//
+///////////////////////////////////////////////////////
+
+let arrayCategoria = [];
+arrayCategoria.push(categoria.toDTO());
+arrayCategoria.push(categoria2.toDTO());
+
+writeFile('categoria.json', JSON.stringify(arrayCategoria), function (error:any){
+    if(error) throw error;
+    console.log('Arquivo Salvo com Sucesso!');
+    readFile('categoria.json', (error, dadoGravadoArquivo) => {
+        if(error) throw error;
+        console.log('Leitura de Arquivo!');
+        let categoriasSalvas: [] = JSON.parse(dadoGravadoArquivo.toString());
+        categoriasSalvas.forEach(categoriaJSON => {
+            console.log(categoriaJSON);
+            console.log(CategoriaMap.toDomain(categoriaJSON));
+        })
+       
+    });
+});
+
 }
  catch (error:any) {
     if(error instanceof DomainException) {
+        console.log('Exceção de Domínio');
+        console.log(error.message);
+    }
+    else {
+        console.log('Outras exceções');
         console.log(error.message);
     }
 
