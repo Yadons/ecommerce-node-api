@@ -4,7 +4,9 @@
   "description": "Este é um projeto acadêmico para prática de desenvolvimento de software mais especificamente a aplicação do paradigma orientado objetos (POO) e seus conceitos, implementação de aplicações WEB e PIs, integração com banco de dados, utilização de testes automatizados, tudo em conformidade com princípios e padrões de arquitetura e projeto além de observânia às boas práticas de desenvolvimento. Uso do ambiente de execução node e linguagem de programação TypeScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui"
   },
   "keywords": [
     "processo",
@@ -42,7 +44,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.2.0",
+    "@vitest/ui": "^2.0.5",
     "sucrase": "^3.35.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   }
 }
