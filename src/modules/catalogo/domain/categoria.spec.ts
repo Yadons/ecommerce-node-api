@@ -1,11 +1,11 @@
 import { describe, expect, test } from "vitest";
-import { CriarCategoriaProps } from "./categoria.types";
+import { CriarCategoriaProps, RecuperarCategoriaProps } from "./categoria.types";
 import { Categoria } from "./categoria.entity";
 import { NomeCategoriaTamanhoMaximoInvalido, NomeCategoriaTamanhoMinimoInvalido } from "./categoria.exceptions";
 
 //Suítes de Testes de Unidade - Entidade de Domínio.
 //Usando a descrição, você pode definir como um conjunto de testes ou benchmarks relacionados.
-describe('Entidade de Domínio: Categoria', () => {
+describe('Entidade de Domínio: Criar Categoria', () => {
 
     //Teste define um conjunto de expectativas relacionadas.
     test('Deve criar uma Categoria Válida', async () => {
@@ -44,4 +44,22 @@ describe('Entidade de Domínio: Categoria', () => {
 
     });
 
-})
+});
+
+describe('Entidade de Domínio: Recuperar Categoria ', () => {
+
+    //Teste define um conjunto de expectativas relacionadas.
+    test('Deve recuperar uma Categoria Válida', async () => {
+        //Dado (Given)
+        const categoriaValida: RecuperarCategoriaProps = {
+           id: 'b02f5f98-f718-441c-8e6c-63ffb08f495b',
+            nome: 'cama'
+        };
+        //Quando (when) e Então (then)
+        expect(Categoria.recuperar(categoriaValida))
+            .toBeInstanceOf(Categoria);
+    });
+
+    
+
+});
