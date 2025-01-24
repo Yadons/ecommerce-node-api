@@ -7,17 +7,21 @@ class CategoriaMap {
     public static toDTO(categoria: Categoria): ICategoria {
         return {
             id: categoria.id,
-            nome: categoria.nome
+            nome: categoria.nome,
+            dataCriacao: categoria.dataCriacao,
+            dataAtualizacao: categoria.dataAtualizacao
         }
     }
     public static toDomain(categoria: RecuperarCategoriaProps): Categoria {
         return Categoria.recuperar(categoria);
     }
 
-    public static fromPrismaModelToDomain(categoria: Prisma.CategoriaCreateInput): Categoria {
+    public static fromPrismaModelToDomain(categoriaPrisma: Prisma.CategoriaCreateInput): Categoria {
         return CategoriaMap.toDomain({
-            id: categoria.id,
-            nome: categoria.nome
+            id: categoriaPrisma.id,
+            nome: categoriaPrisma.nome,
+            dataCriacao: categoriaPrisma.dataCriacao as Date,
+            dataAtualizacao: categoriaPrisma.dataAutalizacao as Date
         })
     }
 }
