@@ -1,0 +1,48 @@
+{
+  "name": "ecommerce-node-api",
+  "version": "1.0.0",
+  "description": "Este é um projeto acadêmico para prática de desenvolvimento de software mais especificamente a aplicação do paradigma orientado objetos (POO) e seus conceitos, implementação de aplicações WEB e PIs, integração com banco de dados, utilização de testes automatizados, tudo em conformidade com princípios e padrões de arquitetura e projeto além de observânia às boas práticas de desenvolvimento. Uso do ambiente de execução node e linguagem de programação TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "processo",
+    "de",
+    "desenvolvimento",
+    "de",
+    "sofware",
+    "aplicações",
+    "web",
+    "API",
+    "principios",
+    "e",
+    "padrões",
+    "de",
+    "arquitetura",
+    "princípios",
+    "e",
+    "padroes",
+    "de",
+    "projetos",
+    "testes",
+    "automatizados",
+    "boas",
+    "práticas",
+    "typescript",
+    "node",
+    "acadêmico",
+    "ifs",
+    "programação",
+    "II",
+    "programação",
+    "III"
+  ],
+  "author": "Yago Silva",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "sucrase": "^3.35.0",
+    "typescript": "^5.5.4"
+  }
+}

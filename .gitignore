@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+
+# Prisma
+prisma/.env
+prisma/.env.local
+prisma/.env.*.local
+prisma/migrations/
+
+# Logs
+*.log
+logs/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+
+# Backup e arquivos sensíveis
+*.sql
+*.sql.gz
+*.db
+*.pem
+*.key
+*.crt
+
+# Ambiente virtual (Typescript, caso usado)
+.env/
+.env.local
+*.env.*
+.env.*
+
+# Outros temporários
+tmp/
